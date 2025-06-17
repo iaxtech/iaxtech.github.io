@@ -24,20 +24,21 @@ header {
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   object-fit: contain;
   animation: float 4s ease-in-out infinite;
 }
 
-.logo-nome h1 {
+.logo-nome-central h1 {
   color: #c5f3a0;
-  font-size: 2.2rem;
+  font-size: 2.8rem;
+  font-style: italic;
 }
 
 .top-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   flex-wrap: wrap;
@@ -45,24 +46,24 @@ header {
 
 .contatos {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  margin-right: 2rem;
+  flex-direction: row;
+  gap: 120px;
+  margin-right: 6rem;
+ 
 }
 
 .telefone-whats {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
+  gap: 20px;
+  font-size: 2.5rem;
   text-decoration: none;
   color: #ffffff;
 }
 
 .telefone-whats img {
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
 }
 
 .telefone-whats:hover {
@@ -72,15 +73,15 @@ header {
 .suporte-topo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.2rem;
+  gap: 10px;
+  font-size: 2.5rem;
   color: #c5f3a0;
   text-decoration: none;
 }
 
 .suporte-topo .icone-suporte {
-  width: 28px;
-  height: 28px;
+  width: 52px;
+  height: 52px;
 }
 
 .separador {
