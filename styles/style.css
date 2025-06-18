@@ -1,8 +1,17 @@
+
+/* Cores para usar no site
+    { color: #6CCABB;
+      color: #C5F3A0;
+    }
+*/
 /* Reset e estrutura base */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+   
+
 }
 
 body {
@@ -120,7 +129,11 @@ p, li {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
 }
+.card img{
+    width: 32px;
+    height: 32px;
 
+}
 .card:hover {
   transform: translateY(-10px);
 }
@@ -226,4 +239,57 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* CSS – Estilo do Carrossel:*/
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 3rem auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+.carousel .prev {
+  left: 10px;
+}
+.carousel .next {
+  right: 10px;
+}
+
+.carousel button:hover {
+  background: rgba(0, 0, 0, 0.7);
 }

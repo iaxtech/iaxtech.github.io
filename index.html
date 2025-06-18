@@ -9,7 +9,6 @@
 </head>
 <body>
 
-
   <header>
   <div class="top-bar">
     <div class="logo-nome-central">
@@ -22,13 +21,12 @@
         <span class="tel-numero">(34) 9.9132-3416</span>
       </a>
       <a href="https://wa.me/5534991323416" target="_blank" class="suporte-topo">
-        <img src="https://cdn-icons-png.flaticon.com/512/10357/10357086.png" alt="Suporte 24/7" class="icone-suporte">
-        <span class="suporte-texto">Suporte 24/7</span>
+        <img src="./img/icons8-suporte-64.png" alt="Suporte 24/7" class="icone-suporte">
+        <span class="suporte-texto"> Suporte 24 / 7</span>
       </a>
     </div>
   </div>
 </header>
-
 
   <hr class="separador">
 
@@ -39,36 +37,55 @@
 
   <section class="benefits">
     <div class="card">
-      <h3>📋 Gestão de Pedidos</h3>
-      <p>Centralize pedidos de salão, balcão e delivery em uma única tela.</p>
+      <h3>📋 Controle de Mesas e Comandas</h3>
+      <p>Gerencie mesas e comandas com facilidade, permitindo que seus garçons atendam de maneira ágil e eficiente. 
+        Centralize pedidos de salão, balcão e delivery em uma única tela.</p>
     </div>
     <div class="card">
       <h3>👨‍🍳 Tela da Cozinha</h3>
       <p>Envie comandas automáticas e organize o preparo dos pratos.</p>
     </div>
     <div class="card">
-      <h3>📦 Controle de Estoque</h3>
-      <p>Evite desperdícios com controle de insumos por ingrediente.</p>
+      <h3>📦 Controle de Estoque Preciso </h3>
+      <p>Ficha técnica do produto, Receita e Custo do produto. 
+        Evite desperdícios e faltas com um sistema que monitora seu estoque em tempo real.</p>
     </div>
     <div class="card">
       <h3>📲 Integração com Apps</h3>
-      <p>Conecte com iFood, Rappi, e outros, sem retrabalho.</p>
+      <p>Conecte com iFood, Rappi, e outros, sem retrabalho. Maximize suas vendas integrando seu sistema com os principais aplicativos de delivery. 
+        Controle os pedidos de maneira centralizada e eficiente.</p>
+    </div>
+    <div class="card">
+      <h3> <img src="./img/icons8-dinheiro-com-asas-48.png" alt=""> Gestão Financeira Eficiente</h3>
+      <p>Conecte com iFood, Rappi, e outros, sem retrabalho. Maximize suas vendas integrando seu sistema com os principais aplicativos de delivery. 
+        Controle os pedidos de maneira centralizada e eficiente.</p>
+    </div>
+    <div class="card">
+      <h3> <img src="./img/icons8-companhia-48.png" alt=""> Administração de Múltiplas Filiais</h3>
+      <p>Facilite a gestão de várias unidades de forma centralizada e integrada, 
+        promovendo maior eficiência operacional e coordenação entre todos os pontos de serviço.</p>
     </div>
   </section>
 
-  <section class="gallery">
-    <img src="https://source.unsplash.com/featured/?restaurant" alt="Imagem 1">
-    <img src="https://source.unsplash.com/featured/?kitchen" alt="Imagem 2">
-    <img src="https://source.unsplash.com/featured/?delivery" alt="Imagem 3">
-  </section>
+ <section class="carousel">
+  <div class="carousel-wrapper">
+    <div class="carousel-images">
+      <img src="./img/Foto Capa1.png" alt="Imagem 1">
+      <img src="./img/Foto Capa2.png" alt="Imagem 2">
+      <img src="./img/Foto Capa2.png" alt="Imagem 3">
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
 
   <section class="video-container">
     <h2>Veja nosso sistema em ação</h2>
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+    <iframe src="" frameborder="0" allowfullscreen></iframe>
   </section>
 
    <div class="cta">
-    <a href="https://wa.me/5534991323416" target="_blank">Fale com um especialista</a>
+    <a href="https://wa.me/5534991323416" target="_blank">Solicite uma Demostração</a>
   </div>
 
   <div class="whats-float">
@@ -80,5 +97,32 @@
   <footer>
     <p>&copy; 2025 IA-XTECH. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+  const images = document.querySelector('.carousel-images');
+  const total = images.children.length;
+  let index = 0;
+
+  document.querySelector('.next').onclick = () => {
+    index = (index + 1) % total;
+    updateCarousel();
+  };
+
+  document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + total) % total;
+    updateCarousel();
+  };
+
+  function updateCarousel() {
+    images.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  // Gira automaticamente a cada 5 segundos
+  setInterval(() => {
+    index = (index + 1) % total;
+    updateCarousel();
+  }, 5000);
+</script>
+
 </body>
 </html>
