@@ -67,17 +67,41 @@
     </div>
   </section>
 
- <section class="carousel">
-  <div class="carousel-wrapper">
-    <div class="carousel-images">
-      <img src="./img/Foto Capa1.png" alt="Imagem 1">
-      <img src="./img/Foto Capa2.png" alt="Imagem 2">
-      <img src="./img/Foto Capa2.png" alt="Imagem 3">
+
+
+
+<section class="hero-carousel">
+  <div class="slide-wrapper">
+    <div class="slide active" style="background-image: url('./img/FotoCapa1.png')"></div>
+    <div class="slide" style="background-image: url('./img/FotoCapa2.png')"></div>
+    <div class="slide" style="background-image: url('./img/FotoCapa3.png')"></div>
+
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+    <div class="carousel-dots"></div>
+  </div>
+
+  <!-- Conteúdo de cada slide -->
+  <div class="slide-textos">
+    <div class="texto-slide ativo">
+      <h2>Lançamentos</h2>
+      <p>Nosso software e uma solução que otimza a gestão do seu restaurante, desde o atendimento até o controle de estoque.</p>
     </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
+    <div class="texto-slide">
+      <h2>Controle Total do Restaurante</h2>
+      <p>Tenha acesso a relatórios, estoque, comandas, pedidos, entregas e muito mais.</p>
+    </div>
+    <div class="texto-slide">
+      <h2>Atendimento Rápido e Prático</h2>
+      <p>Otimização no atendimento ao cliente com sistemas simples e inteligentes.</p>
+    </div>
   </div>
 </section>
+
+
+
+
+
 
   <section class="video-container">
     <h2>Veja nosso sistema em ação</h2>
@@ -98,31 +122,54 @@
     <p>&copy; 2025 IA-XTECH. Todos os direitos reservados.</p>
   </footer>
 
-  <script>
-  const images = document.querySelector('.carousel-images');
-  const total = images.children.length;
+  
+
+
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const texts = document.querySelectorAll('.texto-slide');
+  const dotsContainer = document.querySelector('.carousel-dots');
   let index = 0;
 
-  document.querySelector('.next').onclick = () => {
-    index = (index + 1) % total;
-    updateCarousel();
-  };
-
-  document.querySelector('.prev').onclick = () => {
-    index = (index - 1 + total) % total;
-    updateCarousel();
-  };
-
-  function updateCarousel() {
-    images.style.transform = `translateX(-${index * 100}%)`;
+  function showSlide(i) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === i);
+      dotsContainer.children[idx].classList.toggle('active', idx === i);
+      texts[idx].classList.toggle('ativo', idx === i);
+    });
   }
 
-  // Gira automaticamente a cada 5 segundos
+  // Dots
+  slides.forEach((_, idx) => {
+    const dot = document.createElement('span');
+    if (idx === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      index = idx;
+      showSlide(index);
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  document.querySelector('.next').onclick = () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  };
+  document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  };
+
+  // Auto-slide
   setInterval(() => {
-    index = (index + 1) % total;
-    updateCarousel();
-  }, 5000);
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 6000);
 </script>
+
+
+
+
 
 </body>
 </html>
