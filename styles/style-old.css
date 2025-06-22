@@ -1,0 +1,333 @@
+
+/* Cores para usar no site
+    { color: #6CCABB;
+      color: #C5F3A0;
+    }
+*/
+/* Reset e estrutura base */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+/* HEADER */
+header {
+  background-color: #101820;
+  padding: 2rem;
+}
+
+.logo-nome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  animation: float 4s ease-in-out infinite;
+}
+
+.logo-nome-central h1 {
+  color: #c5f3a0;
+  font-size: 2.8rem;
+  font-style: italic;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.contatos {
+  display: flex;
+  flex-direction: row;
+  gap: 120px;
+  margin-right: 6rem;
+ 
+}
+
+.telefone-whats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.telefone-whats img {
+  width: 52px;
+  height: 52px;
+}
+
+.telefone-whats:hover {
+  color: #c5f3a0;
+}
+
+.suporte-topo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2.5rem;
+  color: #c5f3a0;
+  text-decoration: none;
+}
+
+.suporte-topo .icone-suporte {
+  width: 52px;
+  height: 52px;
+}
+
+.separador {
+  margin: 1rem 2rem;
+  height: 3px;
+  background: #15ff00;
+  border: none;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeIn 1s ease;
+}
+
+h1, h2, h3 {
+  color: #15ff00;
+}
+
+p, li {
+  color: #f0f0f0;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card {
+  background: #1e2a38;
+  padding: 1.5rem;
+  border-radius: 12px;
+  flex: 1 1 250px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.card img{
+    width: 32px;
+    height: 32px;
+
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.cta {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.cta a {
+  background: #15ff00;
+  color: #101820;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta a:hover {
+  background: #0bc200;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.gallery img {
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.video-container {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.video-container iframe {
+  width: 90%;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.support {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  color: #c5f3a0;
+}
+
+.support img {
+  width: 32px;
+}
+
+.whats-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.whats-float a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.whats-float img {
+  width: 32px;
+  height: 32px;
+}
+
+footer {
+  background: #101820;
+  text-align: center;
+  padding: 1rem;
+  color: #15ff00;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CSS – Estilo do Carrossel:*/
+
+.hero-carousel {
+  max-width: 100%;
+  margin: 2rem auto;
+}
+
+.slide-wrapper {
+  position: relative;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
+.carousel-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+.carousel-dots span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.carousel-dots span.active {
+  background: #fff;
+}
+
+/* Texto fora da imagem */
+.slide-textos {
+  margin-top: 1rem;
+  text-align: center;
+}
+.slide-textos .texto-slide {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+.slide-textos .texto-slide.ativo {
+  display: block;
+}
+.slide-textos h2 {
+  font-size: 2rem;
+  color: #15ff00;
+}
+.slide-textos p {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
