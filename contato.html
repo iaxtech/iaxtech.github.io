@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fale Conosco - IA-XTECH</title>
+  <link rel="stylesheet" href="style-contato.css" />
+</head>
+<body>
+  <section class="form-container">
+    <h1>Fale Conosco</h1>
+    <p class="subtitle">Nossa equipe está pronta para ajudar</p>
+    <p class="info">
+      Estamos aqui para ouvir você. Seja para esclarecer dúvidas, fornecer feedback ou iniciar uma parceria,
+      nossa equipe está pronta para ajudar. <strong>Entre em contato conosco hoje mesmo.</strong>
+    </p>
+
+    <form action="enviar-email.php" method="POST" class="form-box">
+      <input type="text" name="nome" placeholder="Nome*" required />
+      <input type="tel" name="telefone" placeholder="Telefone*" required />
+      <input type="email" name="email" placeholder="Email*" required />
+      <input type="text" name="empresa" placeholder="Empresa" />
+      <textarea name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</body>
+</html>
