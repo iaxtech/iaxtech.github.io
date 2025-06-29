@@ -17,133 +17,196 @@
 </head>
 
 <body>
-   <!--Superior Header -->
+  <!-- Botão toggle tema -->
+  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema" id="themeToggleBtn">🌙</button>
+
+  <!--Superior Header -->
   <div class="superior">
-     <a href="https://wa.me/5534996790001" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a><p> (34) 9.9679-0001</p>
+    <a href="https://wa.me/5534996790001" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WhatsApp"></a>
+    <p> (34) 9.9679-0001</p>
   </div>
 
   <!-- Header -->
   <header class="header">
-
-    
     <div class="container">
       <img src="./img/LOGO SEM FUNDO.png" alt="Logo IA-XTECH" class="logo" />
-      <h1 class="logo">IA-XTECH</h1>
+      <h1 class="logo-text">IA-XTECH</h1>
       <div class="nav-toggle" onclick="document.querySelector('.nav ul').classList.toggle('active')">
         <i class="fas fa-bars"></i>
       </div>
       <nav class="nav">
         <ul>
-          <li><a href="#recursos"><i class="fas fa-cogs"></i> Recursos</a></li>
-          <li><a href="#planos"><i class="fas fa-tags"></i> Planos</a></li>
-          <li><a href="#integracoes"><i class="fas fa-plug"></i> Integrações</a></li>
-          <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+          <li><a href="#recursos"> <p>Recursos</p></a></li>
+          <li><a href="#planos"><p>Gestão</p></a></li>
+          <li><a href="#integracoes"><p>Integrações</p></a></li>
+          <li><a href="#contato"><p><i class="fas fa-envelope"></i> Contato</p></a></li>
         </ul>
       </nav>
+
       <a href="https://wa.me/5534996790001" target="_blank" class="btn-primaria"><i class="fas fa-rocket"></i> Atendimento 24/7</a>
     </div>
   </header>
 
   <!-- Hero Section -->
-
-
-  <section class="hero" data-aos="fade-up">
-  <div class="container">
-     <div class="hero-animation" style="width: 100%; max-width: 100%; margin: 0 auto;">
-      <video autoplay muted loop playsinline 
-        style="width: 100%; height: 400px; display: block; border-radius: 12px; object-fit: cover;">
-        <source src="../iaxtech.github.io/video/Ia.mkv" type="video/mp4" />
-        Seu navegador não suporta a reprodução de vídeo.
-     </video>
+  <section class="hero" data-aos="fade-down">
+    <div class="container">
+      <div class="hero-animation" style="width: 100%; max-width: 100%; margin: 0 auto;">
+        <video autoplay muted loop playsinline
+          style="width: 100%; height: 400px; display: block; border-radius: 12px; object-fit: cover;">
+          <source src="../iaxtech.github.io/video/Ia.mkv" type="video/mp4" />
+          Seu navegador não suporta a reprodução de vídeo.
+        </video>
+      </div>
+      <h2>Sistema completo para gestão de comércios e restaurantes</h2>
+      <p>Simplifique suas operações, aumente suas vendas e tenha controle total com a IA-XTECH.</p>
     </div>
-    <h2>Sistema completo para gestão de comércios e restaurantes</h2>
-    <p>Simplifique suas operações, aumente suas vendas e tenha controle total com a IA-XTECH.</p>
-  </div>
-</section>
+  </section>
 
-
-
+  <hr class="separador">
 
   <!-- Recursos Section -->
-  <section class="recursos" id="recursos" data-aos="fade-up">
+  <section class="recursos" id="recursos" data-aos="fade-down">
     <div class="container">
       <h3>Recursos</h3>
       <div class="cards">
+
         <div class="card">
-          <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_k9lwcczv.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Gestão de Vendas</h4>
-          <p>Controle suas vendas com relatórios em tempo real e automação inteligente.</p>
+          <div class="card-header">
+            <h2>Controle de Mesas e Comandas</h2>
+            <img src="./img/Block.png" alt="" class="icon">
+          </div>
+          <p>Gerencie mesas e comandas com facilidade. Centralize pedidos de salão, balcão e delivery em uma única
+            tela.</p>
+          <div class="card-footer">
+            <span class="status secured">Secured</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
         <div class="card">
-          <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_zrqthn6o.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Controle de Estoque</h4>
-          <p>Monitore o estoque automaticamente com alertas de reposição.</p>
+          <div class="card-header">
+            <h2>Gestão Financeira Eficiente</h2>
+            <img src="./img/Wi.png" alt="" class="icon">
+          </div>
+          <p>Controle o fluxo de caixa, contas a pagar e receber e conciliação bancária.</p>
+          <div class="card-footer">
+            <span class="status connected">Connected</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
         <div class="card">
-          <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_jzjxhx.json" background="transparent"
-            speed="1" style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Dashboard Inteligente</h4>
-          <p>Visualize métricas e indicadores de desempenho em tempo real.</p>
+          <div class="card-header">
+            <h2>Controle de Estoque Preciso</h2>
+            <img src="./img/LUZ.png" alt="" class="icon">
+          </div>
+          <p>Evite desperdícios e faltas com um sistema que monitora seu estoque em tempo real.</p>
+          <div class="card-footer">
+            <span class="status activated">Activated</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
+  <hr class="separador">
+
   <!-- Planos Section -->
-  <section class="planos" id="planos" data-aos="fade-up">
+  <section class="planos" id="planos" data-aos="fade-down">
     <div class="container">
       <h3>Planos</h3>
       <div class="cards">
+
         <div class="card">
-          <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_mznpnlcz.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Plano Básico</h4>
-          <p>Ideal para pequenos comércios. Recursos essenciais para começar.</p>
+          <div class="card-header">
+            <h2>Tela da Cozinha</h2>
+            <img src="./img/cozinheiro.png" alt="" class="icon">
+          </div>
+          <p>Envie comandas automáticas e organize o preparo dos pratos.</p>
+          <div class="card-footer">
+            <span class="status rec">🔴 Rec</span>
+            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+          </div>
         </div>
+
         <div class="card">
-          <lottie-player src="https://assets5.lottiefiles.com/private_files/lf30_wqypnpu5.json" background="transparent"
-            speed="1" style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Plano Profissional</h4>
-          <p>Mais ferramentas, relatórios e integrações para escalar seu negócio.</p>
+          <div class="card-header">
+            <h2>Integração com Apps</h2>
+            <img src="./img/Mobile1.png" alt="" class="icon">
+          </div>
+          <p>Conecte com iFood, Rappi e outros, sem retrabalho. Maximize suas vendas.</p>
+          <div class="card-footer">
+            <span class="status activated">Activated</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
+
         <div class="card">
-          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_turjj4cf.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Plano Premium</h4>
-          <p>Automação total, suporte dedicado e acesso antecipado a novidades.</p>
+          <div class="card-header">
+            <h2>Administração de Múltiplas Filiais</h2>
+            <img src="./img/Empresa.png" alt="" class="icon">
+          </div>
+          <p>Facilite a gestão de várias unidades de forma centralizada e integrada.</p>
+          <div class="card-footer">
+            <span class="status activated">Activated</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
+  <hr class="separador">
+
   <!-- Integrações Section -->
-  <section class="integracoes" id="integracoes" data-aos="fade-up">
+  <section class="integracoes" id="integracoes" data-aos="fade-down">
     <div class="container">
       <h3>Integrações</h3>
       <div class="cards">
+
         <div class="card">
-          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_1pxqjqps.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>WhatsApp</h4>
-          <p>Envie mensagens, recibos e alertas diretamente aos seus clientes.</p>
+          <div class="card-header">
+            <h2>Tela da Cozinha</h2>
+            <img src="./img/cozinheiro.png" alt="" class="icon">
+          </div>
+          <p>Envie comandas automáticas e organize o preparo dos pratos.</p>
+          <div class="card-footer">
+            <span class="status rec">🔴 Rec</span>
+            <label class="switch"><input type="checkbox"><span class="slider"></span></label>
+          </div>
         </div>
+
         <div class="card">
-          <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_zrqthn6o.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Pagamentos Online</h4>
-          <p>Integrações com os principais gateways de pagamento do mercado.</p>
+          <div class="card-header">
+            <h2>Integração com Apps</h2>
+            <img src="./img/Mobile1.png" alt="" class="icon">
+          </div>
+          <p>Conecte com iFood, Rappi e outros, sem retrabalho. Maximize suas vendas.</p>
+          <div class="card-footer">
+            <span class="status activated">Activated</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
+
         <div class="card">
-          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_kqn8w5v1.json" background="transparent" speed="1"
-            style="width: 100px; height: 100px; margin: 0 auto;" loop autoplay></lottie-player>
-          <h4>Impressoras e PDV</h4>
-          <p>Compatível com dispositivos e periféricos comerciais diversos.</p>
+          <div class="card-header">
+            <h2>Administração de Múltiplas Filiais</h2>
+            <img src="./img/Empresa.png" alt="" class="icon">
+          </div>
+          <p>Facilite a gestão de várias unidades de forma centralizada e integrada.</p>
+          <div class="card-footer">
+            <span class="status activated">Activated</span>
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
+
+  <hr class="separador">
 
   <!-- Contato Section -->
   <section class="contato" id="contato" data-aos="fade-up">
@@ -160,8 +223,9 @@
       <p id="msgStatus" style="margin-top:10px;"></p>
     </div>
   </section>
-       <!-- Whats -->
-<div class="whats-float">
+
+  <!-- Whats -->
+  <div class="whats-float">
     <a href="https://wa.me/5534996790001" target="_blank">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
     </a>
@@ -172,6 +236,7 @@
     <p>© 2025 IA-XTECH. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
@@ -201,54 +266,54 @@
         });
     });
   </script>
+
   <script>
-  const slides = document.querySelectorAll('.slide');
-  const texts = document.querySelectorAll('.texto-slide');
-  const dotsContainer = document.querySelector('.carousel-dots');
-  let index = 0;
+    // Tema claro / escuro com ícone animado
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
 
-  function showSlide(i) {
-    slides.forEach((slide, idx) => {
-      slide.classList.toggle('active', idx === i);
-      dotsContainer.children[idx].classList.toggle('active', idx === i);
-      texts[idx].classList.toggle('ativo', idx === i);
+    function setIcon(theme) {
+      if (theme === 'light') {
+        themeToggleBtn.textContent = '☀️';
+        themeToggleBtn.title = 'Modo claro ativado';
+      } else {
+        themeToggleBtn.textContent = '🌙';
+        themeToggleBtn.title = 'Modo escuro ativado';
+      }
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute("data-theme");
+
+      if (currentTheme === "light") {
+        body.removeAttribute("data-theme");
+        localStorage.removeItem("iaxtech-theme");
+        fadeIcon('🌙');
+      } else {
+        body.setAttribute("data-theme", "light");
+        localStorage.setItem("iaxtech-theme", "light");
+        fadeIcon('☀️');
+      }
+    }
+
+    function fadeIcon(newIcon) {
+      themeToggleBtn.style.opacity = 0;
+      setTimeout(() => {
+        themeToggleBtn.textContent = newIcon;
+        themeToggleBtn.style.opacity = 1;
+      }, 200);
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("iaxtech-theme");
+      if (savedTheme === "light") {
+        document.body.setAttribute("data-theme", "light");
+        setIcon('light');
+      } else {
+        setIcon('dark');
+      }
     });
-  }
-
-  // Dots
-  slides.forEach((_, idx) => {
-    const dot = document.createElement('span');
-    if (idx === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => {
-      index = idx;
-      showSlide(index);
-    });
-    dotsContainer.appendChild(dot);
-  });
-
-  document.querySelector('.next').onclick = () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  };
-  document.querySelector('.prev').onclick = () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
-  };
-
-  // Auto-slide
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-  }, 6000);
-</script>
-<script>
-  function trocarVideo(caminho) {
-    const video = document.getElementById('videoPlayer');
-    video.src = caminho;
-    video.load();
-    video.play();
-  }
-</script>
+  </script>
 </body>
 
 </html>
