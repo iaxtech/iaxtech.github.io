@@ -145,14 +145,14 @@ body {
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 50px;
+  gap: 30px;
   align-items: center;
   margin: 0;
   padding: 0;
 }
 
 .nav a {
-  font-size: 20px;
+  font-size: 32px;
   color: #25d366;
   text-decoration: none;
   font-weight: 600;
@@ -162,7 +162,7 @@ body {
 }
 
 .nav a p {
-  font-size: 28px;
+  font-size: 40px;
   margin: 0;
 }
 
