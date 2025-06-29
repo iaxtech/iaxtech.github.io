@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" data-theme="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -17,6 +17,11 @@
 </head>
 
 <body>
+  <!-- Botão de tema -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+     <i class="fas fa-sun"></i>
+    </button>
+
   <!--Superior Header -->
   <div class="superior">
     <a href="https://wa.me/5534996790001" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
@@ -27,46 +32,48 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <img src="./img/LOGO SEM FUNDO.png" alt="Logo IA-XTECH" class="logo" />
-      <h1 class="logo-text">IA-XTECH</h1>
+       <div class="logo-area">
+        <img src="./img/LOGO SEM FUNDO.png" alt="Logo IA-XTECH" class="logo" />
+        <h1 class="logo-text">IA-XTECH</h1>
+      </div>
+      
       <div class="nav-toggle" onclick="document.querySelector('.nav ul').classList.toggle('active')">
         <i class="fas fa-bars"></i>
       </div>
       <nav class="nav">
         <ul>
           <li><a href="#recursos"><p>Recursos</p></a></li>
-          <li><a href="#planos"><p>Gestão</p></a></li>
+          <li><a href="#gestao"><p>Gestão</p></a></li>
           <li><a href="#integracoes"><p>Integrações</p></a></li>
-          <li><a href="#contato"><p><i class="fas fa-envelope"></i> Contato</p></a></li>
+          <li><a href="#contato"><p>Contato</p></a></li>
         </ul>
       </nav>
-
-      <a href="https://wa.me/5534996790001" target="_blank" class="btn-primaria"><i class="fas fa-rocket"></i> Atendimento 24/7</a>
+      <a href="https://wa.me/5534996790001" target="_blank" class="btn-primaria">Suporte Técnico 24h de Segunda à Domingo </a></li>
+        
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" data-aos="fade-down">
-    <div class="container">
-      <div class="hero-animation" style="width: 100%; max-width: 100%; margin: 0 auto;">
-        <video autoplay muted loop playsinline
-          style="width: 100%; height: 400px; display: block; border-radius: 12px; object-fit: cover;">
-          <source src="../iaxtech.github.io/video/Ia.mkv" type="video/mp4" />
-          Seu navegador não suporta a reprodução de vídeo.
-        </video>
-      </div>
-      <h2>Sistema completo para gestão de comércios e restaurantes</h2>
-      <p>Simplifique suas operações, aumente suas vendas e tenha controle total com a IA-XTECH.</p>
+<section class="hero" data-aos="fade-down">
+  <div class="container">
+    <div class="hero-animation" style="width: 100%; max-width: 100%; margin: 0 auto;">
+      <video id="heroVideo" autoplay muted playsinline
+        style="width: 100%; height: 400px; display: block; border-radius: 12px; object-fit: cover;">
+        <source src="../iaxtech.github.io/video/Ia.mkv" type="video/mp4" />
+        Seu navegador não suporta a reprodução de vídeo.
+      </video>
     </div>
-  </section>
+    <h2>Sistema completo para gestão de comércios e restaurantes</h2>
+    <p>Simplifique suas operações, aumente suas vendas e tenha controle total com a IA-XTECH.</p>
+  </div>
+</section>
 
   <hr class="separador">
 
   <!-- Recursos Section -->
   <section class="recursos" id="recursos" data-aos="fade-down">
     <div class="container">
-      <h3>Recursos</h3>
-      <div class="cards">
+       <div class="cards">
 
         <div class="card">
           <div class="card-header">
@@ -110,9 +117,9 @@
   <hr class="separador">
 
   <!-- Planos Section -->
-  <section class="planos" id="planos" data-aos="fade-down">
+  <section class="gestao" id="gestao" data-aos="fade-down">
     <div class="container">
-      <h3>Planos</h3>
+     
       <div class="cards">
 
         <div class="card">
@@ -161,7 +168,7 @@
   <!-- Integrações Section -->
   <section class="integracoes" id="integracoes" data-aos="fade-down">
     <div class="container">
-      <h3>Integrações</h3>
+      
       <div class="cards">
 
         <div class="card">
@@ -236,15 +243,18 @@
   </footer>
 
   <!-- Scripts -->
+
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
+
+   <script>
     AOS.init({
       duration: 1000,
       once: true,
     });
-  </script>
+   </script>
 
-  <script>
+  <!--// Script para rolagem suave com offset do header fixo-->
+   <script>
     // Script para rolagem suave com offset do header fixo
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -270,7 +280,47 @@
         }
       });
     });
-  </script>
+   </script>
+
+ <!--// Script para rolagem de video-->
+   <script>
+     const video = document.getElementById("heroVideo");
+     const sources = [
+          "../iaxtech.github.io/video/Ia.mkv",     // 1º vídeo
+          "../iaxtech.github.io/video/Ia.mkv",
+          "../iaxtech.github.io/video/Ia2.mkv"     // 2º vídeo (troque pelo caminho real)
+          ];
+  let currentIndex = 0;
+
+  video.addEventListener("ended", () => {
+  currentIndex++;
+  if (currentIndex >= sources.length) {
+    currentIndex = 0; // volta para o primeiro
+  }
+  video.src = sources[currentIndex];
+  video.load();
+  video.play();
+});
+</script>
+
+<!-- Tema claro/escuro -->
+<script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.querySelector('.theme-toggle i');
+      const theme = html.getAttribute('data-theme');
+      if (theme === 'light') {
+        html.setAttribute('data-theme', 'dark');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        html.setAttribute('data-theme', 'light');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+</script>
+
 </body>
 
 </html>
