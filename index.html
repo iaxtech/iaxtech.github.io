@@ -17,9 +17,6 @@
 </head>
 
 <body>
-  <!-- Botão toggle tema -->
-  <button class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema" id="themeToggleBtn">🌙</button>
-
   <!--Superior Header -->
   <div class="superior">
     <a href="https://wa.me/5534996790001" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
@@ -37,7 +34,7 @@
       </div>
       <nav class="nav">
         <ul>
-          <li><a href="#recursos"> <p>Recursos</p></a></li>
+          <li><a href="#recursos"><p>Recursos</p></a></li>
           <li><a href="#planos"><p>Gestão</p></a></li>
           <li><a href="#integracoes"><p>Integrações</p></a></li>
           <li><a href="#contato"><p><i class="fas fa-envelope"></i> Contato</p></a></li>
@@ -154,6 +151,7 @@
           </div>
         </div>
 
+
       </div>
     </div>
   </section>
@@ -202,6 +200,7 @@
           </div>
         </div>
 
+
       </div>
     </div>
   </section>
@@ -243,75 +242,33 @@
       duration: 1000,
       once: true,
     });
-
-    const form = document.getElementById("formContato");
-    const msgStatus = document.getElementById("msgStatus");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      fetch("enviar-contato.php", {
-        method: "POST",
-        body: formData,
-      })
-        .then((response) => response.text())
-        .then((data) => {
-          msgStatus.textContent = data;
-          form.reset();
-        })
-        .catch(() => {
-          msgStatus.textContent = "Erro ao enviar mensagem. Tente novamente.";
-        });
-    });
   </script>
 
   <script>
-    // Tema claro / escuro com ícone animado
-    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    // Script para rolagem suave com offset do header fixo
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-    function setIcon(theme) {
-      if (theme === 'light') {
-        themeToggleBtn.textContent = '☀️';
-        themeToggleBtn.title = 'Modo claro ativado';
-      } else {
-        themeToggleBtn.textContent = '🌙';
-        themeToggleBtn.title = 'Modo escuro ativado';
-      }
-    }
+        const targetID = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetID);
+        if (!targetElement) return;
 
-    function toggleTheme() {
-      const body = document.body;
-      const currentTheme = body.getAttribute("data-theme");
+        const headerOffset = document.querySelector('.header').offsetHeight;
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset - 10;
 
-      if (currentTheme === "light") {
-        body.removeAttribute("data-theme");
-        localStorage.removeItem("iaxtech-theme");
-        fadeIcon('🌙');
-      } else {
-        body.setAttribute("data-theme", "light");
-        localStorage.setItem("iaxtech-theme", "light");
-        fadeIcon('☀️');
-      }
-    }
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
 
-    function fadeIcon(newIcon) {
-      themeToggleBtn.style.opacity = 0;
-      setTimeout(() => {
-        themeToggleBtn.textContent = newIcon;
-        themeToggleBtn.style.opacity = 1;
-      }, 200);
-    }
-
-    window.addEventListener("DOMContentLoaded", () => {
-      const savedTheme = localStorage.getItem("iaxtech-theme");
-      if (savedTheme === "light") {
-        document.body.setAttribute("data-theme", "light");
-        setIcon('light');
-      } else {
-        setIcon('dark');
-      }
+        // Fecha menu mobile se estiver aberto
+        const navUL = document.querySelector('.nav ul');
+        if (navUL.classList.contains('active')) {
+          navUL.classList.remove('active');
+        }
+      });
     });
   </script>
 </body>
